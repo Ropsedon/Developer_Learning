@@ -1,7 +1,9 @@
 import time
 from selenium import webdriver
+import unittest
 
-driver = webdriver.Chrome("/home/alex/DevSite/DevGit/Developer_Learning/chromedriver")  # Optional argument, if not specified will search path.
+# driver = webdriver.Chrome("/home/alex/DevSite/DevGit/Developer_Learning/chromedriver")  # Optional argument, if not specified will search path.
+driver = webdriver.Firefox()  # Optional argument, if not specified will search path.
 driver.get('http://www.google.com/xhtml');
 time.sleep(5) # Let the user actually see something!
 search_box = driver.find_element_by_name('q')

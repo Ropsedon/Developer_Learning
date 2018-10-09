@@ -8,7 +8,8 @@ import pytest
 
 class TestGoogle(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome("/home/alex/DevSite/DevGit/Developer_Learning/chromedriver")
+        # self.driver = webdriver.Chrome("/home/alex/DevSite/DevGit/Developer_Learning/chromedriver")
+        self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.base_url = "https://www.katalon.com/"
         self.verificationErrors = []

@@ -1,0 +1,55 @@
+{
+    "Id": "SBTech.Microservices.Test.CallOtherMicroservice",
+    "Service": "ff6c",
+    "Active": true,
+    "Version": "2.4.5-RC-4245",
+    "TargetClusters": [
+        "IDGEN"
+    ],
+    "Environment": "DEV",
+    "SelfHostVersion": "2.4.5-RC-4269",
+    "Count": 2,
+    "Properties": {
+        "dotnet-runtime": "net462"
+    },
+    "Configuration": {
+        "variables": {
+            
+        },
+        "sharedConfig": {
+            
+        },
+        "assemblies": {
+            "SBTech.Microservices.Test.CallOtherMicroservice": {
+                "services": [
+                    {
+                        "id": "SBTech.Microservices.Test.CallOtherMicroservice",
+                        "type": "CallOtherMicroservice",
+                        "count": 1,
+                        "disabled": false,
+                        "serviceConfig": {
+                            "thickClient": {
+                                "consulConfiguration": {
+                                    "uri": "http://localhost:8500",
+                                    "kvStorageRoute": "/v1/kv/",
+                                    "KvStorageRoutesFolderPath": "RouteMappings"
+                                },
+                                "fabioConfiguration": {
+                                    "uri": "http://localhost:9999"
+                                },
+                                "uriDiscoveryConfiguration": {
+                                    "useCaching": true,
+                                    "cacheExpirationTimeSpan": "00:01:00",
+                                    "retryCount": 3
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "sharedInjectorConfig": {
+            
+        }
+    }
+}

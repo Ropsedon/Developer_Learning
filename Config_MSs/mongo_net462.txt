@@ -1,0 +1,16 @@
+{
+    "Id": "SBTech.Microservices.Test.Microservice.Mongo",
+    "Service": "1c57",
+    "Active": true,
+    "Version": "2.4.5-RC-4245",
+    "TargetClusters": [
+        "IDGEN"
+    ],
+    "Environment": "DEV",
+    "SelfHostVersion": "2.4.5-RC-4269", 
+    "Count": 3,
+    "Properties": {
+        "dotnet-runtime": "net462"
+    },
+    "ConfigPath": "SBTech.Microservices.Test.Microservice.Mongo.2.4.5-RC-4245/lib/config.json"
+}
