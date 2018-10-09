@@ -33,7 +33,7 @@ class UPApplications(unittest.TestCase):
         configs_ms = open(path, 'r+')
         data_json = configs_ms.read()
         # Change status
-        data_json = data_json.replace('false', 'true')
+        data_json = data_json.replace('"Active": false', '"Active":true')
         driver.find_element_by_name("value").send_keys(data_json)
         driver.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Value'])[1]/following::button[1]").click()
@@ -49,7 +49,7 @@ class UPApplications(unittest.TestCase):
         configs_ms = open(path, 'r+')
         data_json = configs_ms.read()
         # Change status
-        data_json = data_json.replace('false', 'true')
+        data_json = data_json.replace('"Active": false', '"Active": true')
         driver.find_element_by_name("value").send_keys(data_json)
         driver.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Value'])[1]/following::button[1]").click()
