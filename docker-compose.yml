@@ -1,0 +1,28 @@
+version: '3' 
+services:
+
+  consul_core: 
+    image: "consul:latest" 
+    ports: 
+      - "8500:8500" 
+      - "9302:8302"
+    networks: 
+      net_core:
+    dns_search: gtech.local
+    command: "agent -server -bind=0.0.0.0 -client=0.0.0.0 -dev -ui" 
+
+  fabio_core:
+    image: magiconair/fabio:latest
+    environment: 
+      - FABIO_REGISTRY_CONSUL_ADDR=consul_core:8500
+    links:
+      - consul_core
+    ports:
+      - "9998:9998"
+      - "9999:9999"
+    networks:
+      net_core:
+    dns_search: gtech.local
+
+networks:
+  net_core:
