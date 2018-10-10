@@ -9,7 +9,9 @@ import time
 #
 # result = run_pro.wait()
 
-
+# PowerShell run docker compose file
 run_pro = subprocess.Popen([r'powershell.exe', '-ExecutionPolicy', 'Unrestricted', 'docker-compose', '-f', 'docker-compose.yml', 'up'], cwd=os.getcwd())
-time.sleep(30)
+# sleep 20 second, need to correct run docker images
+time.sleep(20)
+# In need to log info uncommented string
 # result = run_pro.wait()
